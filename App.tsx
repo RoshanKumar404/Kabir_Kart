@@ -28,6 +28,7 @@ export default function App() {
       <Tab.Navigator screenOptions={{ headerShown: false }}>
         <Tab.Screen name='Home' component={HomeStackNavigator}
          options={{
+          tabBarActiveTintColor:'#FF5722',
           headerShown: false,
          //tabBarLabel: 'For You',
          tabBarIcon: ({ color, size }) => (
@@ -36,6 +37,7 @@ export default function App() {
        }} />
         <Tab.Screen name='Kart' component={Kart}
          options={{
+          tabBarActiveTintColor:'#FF5722',
           headerShown: false,
          //tabBarLabel: 'For You',
          tabBarIcon: ({ color, size }) => (
@@ -44,13 +46,16 @@ export default function App() {
        }} />
         <Tab.Screen name='Order' component={Order}
          options={{
+          tabBarActiveTintColor:'#FF5722',
           headerShown: false,
          //tabBarLabel: 'For You',
          tabBarIcon: ({ color, size }) => (
            <FontAwesome5 name="box-open" color={color} size={size} />
          ),
        }} />
-        <Tab.Screen name='Profile' component={Profile} options={{
+        <Tab.Screen name='Profile' component={Profile}
+         options={{
+          tabBarActiveTintColor:'#FF5722',
              headerShown: false,
             //tabBarLabel: 'For You',
             tabBarIcon: ({ color, size }) => (

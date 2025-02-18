@@ -5,17 +5,15 @@ import Footer from './Footer'
 
 const Layout = ({children}) => {
   return (
-    <>
+    
     
 
     <View>
      {children}
     </View>
-    <View style={styles.footer}>
-    <Footer/>
-    </View>
+   
     
-    </>
+    
   )
 }
 const styles=StyleSheet.create({
