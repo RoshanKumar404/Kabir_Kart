@@ -4,9 +4,11 @@ import Layout from '../Component/Layout/Layout'
 import Category from '../Component/Layout/Category'
 import Index from '../Component/Layout/Banner'
 import Product from '../Component/Product/Product'
+import Header from '../Component/Layout/Header'
 const Home = () => {
   return (
     <Layout> 
+      <Header/>
       <Category/>  
       <Index/> 
       <Product/>
