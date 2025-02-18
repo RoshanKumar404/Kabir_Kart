@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
-import { Categorydata } from '../../data/Data'
+import { Categorydata } from '../../data/CategoryData'
 import { useNavigation } from '@react-navigation/native'
 import Glass from '../../screens/Glass';
 
