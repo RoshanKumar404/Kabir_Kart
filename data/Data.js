@@ -1,0 +1,32 @@
+export const Categorydata=[
+    {
+        _id:1,
+        name:"Glass",
+        path:"Glass",
+        img:require('../Assets/glass.png')
+    },
+    {
+        _id:2,
+        name:"Plate",
+        path:"Plate",
+        img:require('../Assets/plate.png')
+    },
+    {
+        _id:3,
+        name:"tissue",
+        path:"tissue",
+        img:require('../Assets/tissue.png')
+    },
+    {
+        _id:4,
+        name:"Spoon",
+        path:"Spoon&Fork",
+        img:require('../Assets/spoon-and-fork.png')
+    },
+    {
+        _id:5,
+        name:"quater-plate",
+        path:"quater-plate",
+        img:require('../Assets/quater-plate-and-bowl.png')
+    }
+]
