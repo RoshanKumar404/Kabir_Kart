@@ -1,14 +1,17 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
 import { Categorydata } from '../../data/Data'
+import { useNavigation } from '@react-navigation/native'
+import Glass from '../../screens/Glass';
 
 const Category = () => {
+  const Navigation=useNavigation();
   return (
     <ScrollView horizontal={true}>
       <View style={styles.Container}>
         {Categorydata?.map(item => (
           <View key={item._id}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>Navigation.navigate(item.path)}>
               <View style={{
                 alignItems: "center",
                 marginHorizontal: 10, padding: 10,
