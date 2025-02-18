@@ -1,10 +1,17 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View, Dimensions } from 'react-native';
 import React from 'react';
 import { ProductData } from '../../data/ProductData';
+import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window');
 
 export default function Product() {
+    const Navigation=useNavigation();
+    const HandleButton=(id)=>{
+        Navigation.navigate("ProductDetails" ,{_id:id})
+    console.log(id);
+    
+    }
   return (
     <View style={styles.container}>
       {ProductData?.map((item) => (
@@ -16,7 +23,7 @@ export default function Product() {
           </View>
           <Text style={styles.category}>{item.Category}</Text>
           <View style={styles.cardButtons}>
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity onPress={()=>HandleButton(item._id)} style={styles.btn}>
               <Text style={styles.btnText}>Details</Text>
             </TouchableOpacity>
 
