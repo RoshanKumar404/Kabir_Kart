@@ -3,11 +3,13 @@ import React from 'react'
 import Layout from '../Component/Layout/Layout'
 import Category from '../Component/Layout/Category'
 import Index from '../Component/Layout/Banner'
+import Product from '../Component/Product/Product'
 const Home = () => {
   return (
     <Layout> 
       <Category/>  
       <Index/> 
+      <Product/>
         <View >
       <Text style={{fontSize:100}}>Home</Text>
     </View>
