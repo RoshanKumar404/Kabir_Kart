@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View, Dimensions } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View, Dimensions, Alert } from 'react-native';
 import React from 'react';
 import { ProductData } from '../../data/ProductData';
 import { useNavigation } from '@react-navigation/native';
@@ -7,9 +7,9 @@ const { width } = Dimensions.get('window');
 
 export default function Product() {
     const Navigation=useNavigation();
-    const HandleButton=(id)=>{
-        Navigation.navigate("ProductDetails" ,{_id:id})
-    console.log(id);
+    const HandleButton=(item)=>{
+        Navigation.navigate("ProductDetails" ,{Product:item})
+    // console.log(item);
     
     }
   return (
@@ -23,7 +23,10 @@ export default function Product() {
           </View>
           <Text style={styles.category}>{item.Category}</Text>
           <View style={styles.cardButtons}>
-            <TouchableOpacity onPress={()=>HandleButton(item._id)} style={styles.btn}>
+            <TouchableOpacity onPress={()=>{HandleButton(item);
+          // console.log(item.Discription);
+           ;
+            }} style={styles.btn}>
               <Text style={styles.btnText}>Details</Text>
             </TouchableOpacity>
 
