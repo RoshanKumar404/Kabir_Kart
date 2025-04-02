@@ -1,11 +1,21 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import { useRoute } from '@react-navigation/native';
+import React from 'react';
+import CashScreen from './CashScreen';
+import OnlinePayment from './OnlinePayment';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 export default function CheckOut() {
   const route = useRoute();
   const grandtotal = route.params?.grandTotal || 0;
-  console.log(grandtotal);
+  // console.log(grandtotal);
+  const navigation=useNavigation();
+  const CashPYmnet=()=>{
+navigation.navigate("CashScreen")
+  }
+  const OnlinePayment=()=>{
+    navigation.navigate("OnlinePayment")
+
+  }
 
   return (
     <View style={{ flex: 1 }}>
@@ -19,12 +29,12 @@ export default function CheckOut() {
 
   }}>the total amount is : ₹{grandtotal} </Text>
         <View  style={styles.card}>
-          <TouchableOpacity >
+          <TouchableOpacity onPress={CashPYmnet} >
             <Text style={{fontSize:20,padding:10,margin:10,fontWeight:'bold',
               borderRadius:15,backgroundColor:'#000000',color:'#ffffff'
             }} >Cash on Delihvery</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={OnlinePayment}>
             <Text style={{fontSize:20,padding:10,margin:10,
               borderRadius:15,backgroundColor:'#000000',color:'#ffffff',fontWeight:'bold'}}>UPI / DEBIT / CREDIT CARD</Text>
           </TouchableOpacity>

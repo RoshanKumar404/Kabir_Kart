@@ -9,6 +9,8 @@ import Order from './screens/bottomtabs/Order';
 import Profile from './screens/bottomtabs/Profile';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import CheckOut from './screens/CheckOut';
+import OnlinePayment from './screens/OnlinePayment';
+import CashScreen from './screens/CashScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -30,6 +32,8 @@ function Kartstacks (){
 <Stack.Navigator>
 <Stack.Screen name='Kart' component={Kart} />
 <Stack.Screen name='CheckOut' component={CheckOut} />
+<Stack.Screen name='CashScreen' component={ CashScreen}/>
+<Stack.Screen name='OnlinePayment' component={OnlinePayment}/>
 
 </Stack.Navigator>
   )
