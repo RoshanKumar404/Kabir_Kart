@@ -24,7 +24,8 @@ setqty((prev)=>prev-1);
 };
 const Navigation=useNavigation();
     const HandleButton = ()=>{
-        Navigation.navigate("CheckOut")}
+        Navigation.navigate("CheckOut",{grandTotal:58+244*qty});
+      };
   return ( 
     <View style={styles.container}>
       <Text style={styles.text}>
