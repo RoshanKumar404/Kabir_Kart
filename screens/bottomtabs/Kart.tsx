@@ -24,7 +24,7 @@ setqty((prev)=>prev-1);
 };
 const Navigation=useNavigation();
     const HandleButton = ()=>{
-        Navigation.navigate("Home",{screen:"CheckOut"})}
+        Navigation.navigate("CheckOut")}
   return ( 
     <View style={styles.container}>
       <Text style={styles.text}>

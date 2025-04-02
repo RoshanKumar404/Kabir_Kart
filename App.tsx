@@ -19,12 +19,21 @@ function HomeStackNavigator() {
       <Stack.Screen name='Home' component={Home} options={{ headerShown: false }} />
       <Stack.Screen name='Glass' component={Glass} />
       <Stack.Screen name='ProductDetails' component={ProductDetails} />
-      <Stack.Screen name='CheckOut' component={CheckOut} />
+      
 
     </Stack.Navigator>
   );
 }
 
+function Kartstacks (){
+  return(
+<Stack.Navigator>
+<Stack.Screen name='Kart' component={Kart} />
+<Stack.Screen name='CheckOut' component={CheckOut} />
+
+</Stack.Navigator>
+  )
+}
 
 export default function App() {
   return (
@@ -39,7 +48,7 @@ export default function App() {
            <FontAwesome5 name="home" color={color} size={size} />
          ),
        }} />
-        <Tab.Screen name='Kart' component={Kart}
+        <Tab.Screen name='Kart' component={Kartstacks}
          options={{
           tabBarActiveTintColor:'#FF5722',
           headerShown: false,
