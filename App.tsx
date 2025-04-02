@@ -8,6 +8,7 @@ import Kart from './screens/bottomtabs/Kart';
 import Order from './screens/bottomtabs/Order';
 import Profile from './screens/bottomtabs/Profile';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import CheckOut from './screens/CheckOut';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -18,9 +19,12 @@ function HomeStackNavigator() {
       <Stack.Screen name='Home' component={Home} options={{ headerShown: false }} />
       <Stack.Screen name='Glass' component={Glass} />
       <Stack.Screen name='ProductDetails' component={ProductDetails} />
+      <Stack.Screen name='CheckOut' component={CheckOut} />
+
     </Stack.Navigator>
   );
 }
+
 
 export default function App() {
   return (

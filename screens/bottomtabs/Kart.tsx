@@ -1,13 +1,18 @@
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
 import { ProductData } from '../../data/ProductData';
 import Picetable from '../../Component/Picetable';
+import CheckOut from '../CheckOut.tsx';
+import { StackActions, useNavigation } from '@react-navigation/native';
+import Glass from '../Glass.tsx';
+import Home from '../Home.tsx';
 
 type KartProps = {};
 
 export default function Kart({}: KartProps) {
   const [cartItems, setCartItems] = useState(ProductData);
   const [qty,setqty]=useState(0);
+  
 const addItem=()=>{
   if(qty===10)
     return  Alert.alert("You can not add more than 10 items ");
@@ -17,7 +22,10 @@ const removeItem=()=>{
   if(qty<1) return Alert.alert("minimum number of order is 1 ");
 setqty((prev)=>prev-1);
 };
-  return (
+const Navigation=useNavigation();
+    const HandleButton = ()=>{
+        Navigation.navigate("Home",{screen:"CheckOut"})}
+  return ( 
     <View style={styles.container}>
       <Text style={styles.text}>
         {cartItems.length > 0 
@@ -48,6 +56,15 @@ setqty((prev)=>prev-1);
           <View style={styles.Grandtotal}>
             <Picetable title="Grand Total" price={`${58+244*qty}`}/>
           </View>
+
+          <TouchableOpacity
+          onPress={HandleButton}
+          style={{margin:19,borderRadius:6,alignItems:'center',alignContent:'center',padding :10,backgroundColor:"#C3C2BB",borderWidth:2,borderColor:'black'
+          }}>
+            <Text style={{fontSize:19,padding:8,fontWeight:'bold',}}>
+              Check Out
+            </Text>
+          </TouchableOpacity>
         </>
       )}
     </View>
